@@ -1,0 +1,27 @@
+
+<html>
+  <head>
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+  </head>
+
+  <body>
+    <main>
+      <h1>Products</h1>
+      
+      <div class="search">
+        <form action="/products/category" method="get">
+          <label for="prod_search">Search products by category</label><input class="prod_search" type="text" name="search"></input>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="products">
+        {% for prod in products %}
+          <p class="product">Id: {{prod[0]}}<br>Name: {{prod[1]}}<br>Category: {{prod[2]}}</p>
+        {% endfor %}
+      </div>
+
+    </main>
+  </body>
+</html>

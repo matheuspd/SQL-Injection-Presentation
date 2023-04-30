@@ -1,0 +1,70 @@
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    background-color: rgb(77, 205, 228);
+}
+
+h1 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.products{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.product {
+    overflow-wrap: break-word;
+    background-color: azure;
+    border: 1px solid #424242;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+}
+
+.login, .search {
+    overflow-wrap: break-word;
+    background-color: azure;
+    border: 1px solid #424242;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login_input, .prod_search {
+    border: 1px solid #424242;
+    background-color: azure;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    width: 400px;
+}
+
+button {
+    border: 1px solid #424242;
+    border-radius: 10px;
+    background-color: azure;
+    padding: 5px;
+}
+
+.login > label, .search > label {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.login > button, .search > button {
+    margin: 5px;
+    margin-top: 10px;
+}

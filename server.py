@@ -83,37 +83,19 @@ def products():
 def search():
     if session and session['username']:
         param = request.args.get('search')
+        
         if(param):
 
             templates = []
-            query = "SELECT id,name FROM products WHERE category='" + param + "';"
+            query = "SELECT id,name,category FROM products WHERE category='" + param + "';"
             connection = create_db_connection("localhost", "root", pw, db)
             products = read_query(connection, query)
-            
             if(products):
-            
-                temp=""
 
                 for product in read_query(connection, query):
                     templates.append(product)
-                    temp += """
-                                    <p class="product">Id: """+str(product[0])+"""<br>Name: """+product[1]+"""</p>
-                    """
-
-                temp1 = """
-                    <html>
-                        <head>
-                            <title>Products</title>
-                        </head>
-                        <body>
-                                <h1>Products from the """ + param + """ category:</h1>
-                                <div class="products">"""
-                temp2 = """
-                                </div>
-                        </body>
-                    </html>
-                """
-                return render_template_string(temp1+temp+temp2)
+                
+                return render_template('products.html', user=session['username'], products=templates)
             else:
                 return "Product not found."
         

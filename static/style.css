@@ -15,14 +15,12 @@ main {
 }
 
 .products{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px 10px;
 }
 
 .product {
-    overflow-wrap: break-word;
     background-color: azure;
     border: 1px solid #424242;
     border-radius: 10px;

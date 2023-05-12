@@ -42,8 +42,10 @@ def read_query(connection, query):
         print(f"Error: '{err}'")
 
 # User password and Database to make the connection (local machine, change for your local server)
-pw = "LocalHost#123"
-db = "shop"
+pw = "Insert your User Password"
+db = "Insert your Database Name"
+
+# The following connections in the routes are made by the root at the localhost MySQL server
 
 # User logged
 session = {}
